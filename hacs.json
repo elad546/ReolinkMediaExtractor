@@ -1,0 +1,7 @@
+{
+  "name": "Reolink Media Access",
+  "render_readme": true,
+  "domains": ["reolink_media_access"],
+  "homeassistant": "2023.8.0",
+  "iot_class": "Local Polling"
+}
