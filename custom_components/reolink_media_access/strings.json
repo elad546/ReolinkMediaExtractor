@@ -1,0 +1,11 @@
+{
+  "title": "Reolink Media Access",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Reolink Media Access",
+        "description": "No configuration required."
+      }
+    }
+  }
+}
