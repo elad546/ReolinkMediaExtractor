@@ -7,7 +7,7 @@ This mirrors the media content made available by the official Reolink component'
 ## Install via HACS
 
 1. In Home Assistant, open HACS → Integrations → three dots → Custom repositories.
-2. Add this repo URL as type "Integration".
+2. Add this repository URL: `https://github.com/elad/ReolinkMediaExtractor` as type "Integration".
 3. Search for "Reolink Media Access" and install.
 4. Go to Settings → Devices & Services → Add Integration → "Reolink Media Access".
 5. Open the sidebar item "Reolink Media".

@@ -2,11 +2,17 @@
   "domain": "reolink_media_access",
   "name": "Reolink Media Access",
   "version": "0.1.0",
-  "documentation": "https://example.com/hacs/reolink-media-access",
-  "issue_tracker": "https://example.com/hacs/reolink-media-access/issues",
-  "codeowners": ["@your-github"],
+  "documentation": "https://github.com/elad/ReolinkMediaExtractor",
+  "issue_tracker": "https://github.com/elad/ReolinkMediaExtractor/issues",
+  "codeowners": ["@elad"],
   "iot_class": "local_polling",
   "integration_type": "helper",
   "requirements": [],
-  "loggers": ["custom_components.reolink_media_access"]
+  "loggers": ["custom_components.reolink_media_access"],
+  "dependencies": [],
+  "config_flow": false,
+  "zeroconf": [],
+  "ssdp": [],
+  "homekit": {},
+  "mqtt": []
 }
