@@ -11,10 +11,12 @@ from homeassistant.components.frontend import async_register_built_in_panel
 from homeassistant.components.media_source import async_browse_media, async_resolve_media
 
 # Import config flow
-from . import config_flow
+from .config_flow import ConfigFlow
 
 DOMAIN = "reolink_media_access"
 PANEL_URL = "/reolink-media-access/ui"
+
+__all__ = ["ConfigFlow"]
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
