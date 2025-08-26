@@ -10,7 +10,7 @@
   "requirements": [],
   "loggers": ["custom_components.reolink_media_access"],
   "dependencies": [],
-  "config_flow": false,
+  "config_flow": true,
   "zeroconf": [],
   "ssdp": [],
   "homekit": {},
