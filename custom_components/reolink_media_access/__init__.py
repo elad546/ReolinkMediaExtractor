@@ -34,7 +34,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         component_name="iframe",
         sidebar_title="Reolink Media",
         sidebar_icon="mdi:cctv",
-        url_path="reolink-media",
         config={"url": PANEL_URL},
         require_admin=False,
     )
