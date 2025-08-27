@@ -9,14 +9,10 @@ from homeassistant.components.http import HomeAssistantView
 from homeassistant.components import http
 from homeassistant.components.frontend import async_register_built_in_panel
 from homeassistant.components.media_source import async_browse_media, async_resolve_media
-
-# Import config flow
-from .config_flow import ConfigFlow
+from homeassistant.helpers.service import async_register_admin_service
 
 DOMAIN = "reolink_media_access"
 PANEL_URL = "/reolink-media-access/ui"
-
-__all__ = ["ConfigFlow"]
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
@@ -36,7 +32,28 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         sidebar_icon="mdi:cctv",
         config={"url": PANEL_URL},
         require_admin=False,
+        frontend_url_path="reolink-media",
     )
+    
+    # Register service for automations
+    async def async_get_video_url(call):
+        """Get direct URL for a video file."""
+        media_content_id = call.data.get("media_content_id")
+        if not media_content_id:
+            return {"error": "media_content_id required"}
+        
+        try:
+            resolved = await async_resolve_media(hass, media_content_id)
+            return {
+                "url": resolved.url,
+                "mime_type": resolved.mime_type,
+                "media_content_id": media_content_id
+            }
+        except Exception as e:
+            return {"error": str(e)}
+    
+    hass.services.async_register(DOMAIN, "get_video_url", async_get_video_url)
+    
     return True
 
 
